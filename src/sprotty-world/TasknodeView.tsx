@@ -3,10 +3,10 @@
 import { svg } from 'sprotty/lib/lib/jsx';
 import { injectable } from "inversify";
 import {IView, LocalModelSource, RenderingContext, SNode, TYPES} from "sprotty";
-import {graph} from "./model-source";
-import {jsx, VNode} from "snabbdom";
 import {TaskNode} from "../react-world/Sprotty/SprottyComponent";
 import {createContainer} from "./ContainerCreator";
+import {ElkGraphJsonToSprotty} from "./helper/elkgraph-to-sprotty";
+import ELK from "elkjs"
 
 @injectable()
 export class TaskNodeView implements IView {
@@ -34,5 +34,9 @@ export class TaskNodeView implements IView {
 export default function run(graph: any) {
     const container = createContainer("sprotty-container");
     const modelSource = container.get<LocalModelSource>(TYPES.ModelSource);
-    modelSource.setModel(graph);
+    const elkLayout = new ELK();
+    elkLayout.layout(graph).then((a) => {
+        let sGraph = new ElkGraphJsonToSprotty().transform(graph);
+        modelSource.setModel(sGraph);
+    })
 }

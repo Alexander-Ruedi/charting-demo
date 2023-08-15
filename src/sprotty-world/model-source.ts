@@ -2,43 +2,18 @@ import { SEdge, SGraph, SNode } from "sprotty-protocol";
 import {TaskNode} from "../react-world/Sprotty/SprottyComponent";
 
 
-export const graphData: SGraph = {
-  type: "graph",
-  id: "graph",
+export const graphData: any = {
+  id: "root",
+  layoutOptions: { 'algorithm': 'layered' },
   children: [
-    <SNode & TaskNode>{
-      type: "task",
-      id: "task01",
-      name: "First Task",
-      isFinished: true,
-      isRunning: false,
-      position: { x: 0, y: 0 },
-      size: { width: 100, height: 100 },
-    },
-    <SNode & TaskNode>{
-      type: "task",
-      id: "task02",
-      name: "Second Task",
-      isFinished: false,
-      isRunning: true,
-      position: { x: 0, y: 200 },
-      size: { width: 100, height: 100 },
-    },
-    <SNode & TaskNode>{
-      type: "task",
-      id: "task03",
-      name: "Third Task",
-      isFinished: false,
-      isRunning: false,
-      position: { x: 150, y: 0 },
-      size: { width: 100, height: 100 },
-    },
-    <SEdge>{
-      type: "edge",
-      id: "edge01",
-      sourceId: "task01",
-      targetId: "task02",
-      routerKind: "manhattan",
-    },
+    { id: "n1", width: 30, height: 30 },
+    { id: "n2", width: 30, height: 30 },
+    { id: "n3", width: 30, height: 30 },
+    { id: "n4", width: 30, height: 30 }
   ],
+  edges: [
+    { id: "e1", sources: [ "n1" ], targets: [ "n2" ] },
+    { id: "e2", sources: [ "n1" ], targets: [ "n3" ] },
+    { id: "e3", sources: [ "n1" ], targets: [ "n4" ] }
+  ]
 };

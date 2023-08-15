@@ -6,6 +6,8 @@ import run from "../../sprotty-world/TasknodeView";
 
 
 import './container-style.css'
+import './css/diagram.css'
+import './css/common.css'
 
 export interface TaskNode extends SNode {
   name: string;
