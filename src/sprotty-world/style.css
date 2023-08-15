@@ -2,6 +2,7 @@
     width: 100%;
     height: 100%;
 }
+
 .sprotty-edge {
     fill: none;
     stroke: black;
@@ -29,4 +30,71 @@ text {
     font-family: sans-serif;
     font-size: 10pt;
     text-anchor: middle;
+}
+
+[className='node-label-text'] {
+    font-size: 10px;
+
+    @apply mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white
+}
+
+
+[className='node-separator-line'] {
+    fill: black;
+}
+
+[className='node-label-right'] {
+    text-anchor: end;
+    @apply font-normal text-gray-700 dark:text-gray-400
+}
+
+[className='node-label-left'] {
+    text-anchor: start;
+    @apply font-normal text-gray-700 dark:text-gray-400;
+}
+
+.elknode {
+    stroke: #448;
+    stroke-width: 1;
+    fill: white;
+    border-radius: 50px;
+    @apply block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700
+}
+
+.elkport {
+    stroke: #448;
+    stroke-width: 1;
+    fill: #66c;
+}
+
+.elkedge {
+    fill: none;
+    stroke: #224;
+    stroke-width: 1;
+}
+
+.elkedge.arrow {
+    fill: #336;
+}
+
+.elklabel {
+    stroke-width: 0;
+    stroke: #000;
+    fill: #000;
+    font-family: sans-serif;
+    font-size: 10pt;
+    dominant-baseline: hanging;
+}
+
+.elkjunction {
+    stroke: none;
+    fill: #224;
+}
+
+.selected > rect {
+    stroke-width: 3;
+}
+
+.mouseover {
+    stroke: #88f;
 }

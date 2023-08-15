@@ -1,4 +1,3 @@
-
 import "reflect-metadata";
 import { Container, ContainerModule } from "inversify";
 import {
@@ -6,15 +5,19 @@ import {
   configureViewerOptions,
   loadDefaultModules,
   LocalModelSource,
-  PolylineEdgeView,
-  SEdge,
-  SGraph, SGraphFactory,
-  SGraphView, SLabel,
-  SNode,
+  SGraph,
+  SGraphView,
+  SLabel,
   TYPES,
 } from "sprotty";
-import {ElkEdge, ElkJunction, ElkNode, ElkPort} from "./helper/sprotty-model";
-import {ElkEdgeView, ElkLabelView, ElkNodeView, ElkPortView, JunctionView} from "./helper/views";
+import { ElkEdge, ElkJunction, ElkNode, ElkPort } from "./FeatureExtension";
+import {
+  ElkEdgeView,
+  ElkLabelView,
+  ElkNodeView,
+  ElkPortView,
+  JunctionView,
+} from "../render/ContentRenderer";
 
 export const createContainer = (containerId: string) => {
   const myModule = new ContainerModule((bind, unbind, isBound, rebind) => {
@@ -22,13 +25,12 @@ export const createContainer = (containerId: string) => {
 
     const context = { bind, unbind, isBound, rebind } as any;
 
-    configureModelElement(context, 'graph', SGraph, SGraphView);
-    configureModelElement(context, 'node', ElkNode, ElkNodeView);
-    configureModelElement(context, 'port', ElkPort, ElkPortView);
-    configureModelElement(context, 'edge', ElkEdge, ElkEdgeView);
-    configureModelElement(context, 'label', SLabel, ElkLabelView);
-    configureModelElement(context, 'junction', ElkJunction, JunctionView);
-
+    configureModelElement(context, "graph", SGraph, SGraphView);
+    configureModelElement(context, "node", ElkNode, ElkNodeView);
+    configureModelElement(context, "port", ElkPort, ElkPortView);
+    configureModelElement(context, "edge", ElkEdge, ElkEdgeView);
+    configureModelElement(context, "label", SLabel, ElkLabelView);
+    configureModelElement(context, "junction", ElkJunction, JunctionView);
 
     configureViewerOptions(context, {
       needsClientLayout: false,

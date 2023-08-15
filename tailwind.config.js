@@ -5,5 +5,9 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
-
+  experimental: {
+    classRegex: [
+      ["tailwind|yourModule\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ],
+  },
+};
