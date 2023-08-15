@@ -18,6 +18,7 @@
     "snabbdom": "^3.5.1",
     "snabbdom-jsx": "^0.4.2",
     "sprotty": "^0.13.0",
+    "sprotty-elk": "^0.13.1",
     "sprotty-protocol": "^0.13.0",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"

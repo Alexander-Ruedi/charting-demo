@@ -6,14 +6,19 @@ import run from "../../sprotty-world/TasknodeView";
 
 
 import './container-style.css'
+
 export interface TaskNode extends SNode {
   name: string;
   isRunning: boolean;
   isFinished: boolean;
 }
-export const SprottyComponent = () => {
+
+interface SpottyProps{
+  data: any;
+}
+export const SprottyComponent = (props: SpottyProps) => {
   useEffect(() => {
-    run();
+    run(props.data);
   }, []);
 
   return <div id="sprotty-container"/>;

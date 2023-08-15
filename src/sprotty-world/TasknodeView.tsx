@@ -31,7 +31,7 @@ export class TaskNodeView implements IView {
 }
 
 
-export default function run() {
+export default function run(graph: any) {
     const container = createContainer("sprotty-container");
     const modelSource = container.get<LocalModelSource>(TYPES.ModelSource);
     modelSource.setModel(graph);

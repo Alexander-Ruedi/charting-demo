@@ -2,7 +2,7 @@ import { SEdge, SGraph, SNode } from "sprotty-protocol";
 import {TaskNode} from "../react-world/Sprotty/SprottyComponent";
 
 
-export const graph: SGraph = {
+export const graphData: SGraph = {
   type: "graph",
   id: "graph",
   children: [
