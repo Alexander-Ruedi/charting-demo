@@ -10,8 +10,12 @@ export default function run(graph: any) {
   const container = createContainer("sprotty-container");
   const modelSource = container.get<LocalModelSource>(TYPES.ModelSource);
   const elkLayout = new ELK();
-  elkLayout.layout(graph).then((a) => {
-    let sGraph = new ElkGraphJsonToSprotty().transform(graph);
-    modelSource.setModel(sGraph);
-  });
+  elkLayout
+    .layout(graph, {
+      layoutOptions: { "elk.direction": "DOWN", "elk.alignment": "CENTER" },
+    })
+    .then((a) => {
+      let sGraph = new ElkGraphJsonToSprotty().transform(graph);
+      modelSource.setModel(sGraph);
+    });
 }
