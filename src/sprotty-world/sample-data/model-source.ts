@@ -12,6 +12,7 @@ export const graphData: any = {
     { id: "e2", sources: ["n1"], targets: ["n3"] },
     { id: "e3", sources: ["n1"], targets: ["n4"] },
     { id: "e4", sources: ["n4"], targets: ["n1"] },
+    { id: "e5", sources: ["n4"], targets: ["n3"] },
   ],
 };
 

@@ -12,7 +12,9 @@ export default function run(graph: any) {
   const elkLayout = new ELK();
   elkLayout
     .layout(graph, {
-      layoutOptions: { "elk.direction": "DOWN", "elk.alignment": "CENTER" },
+      layoutOptions: {
+        "elk.direction": "DOWN",
+      },
     })
     .then((a) => {
       let sGraph = new ElkGraphJsonToSprotty().transform(graph);
