@@ -4,7 +4,7 @@ import { graphData} from "../sprotty-world/model-source";
 
 function App() {
   return (
-    <div className="App" style={{height: "100%"}}>
+    <div className="App h-full">
       <SprottyComponent data={graphData}/>
     </div>
   );

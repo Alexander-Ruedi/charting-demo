@@ -14,6 +14,7 @@ export const graphData: any = {
   edges: [
     { id: "e1", sources: [ "n1" ], targets: [ "n2" ] },
     { id: "e2", sources: [ "n1" ], targets: [ "n3" ] },
-    { id: "e3", sources: [ "n1" ], targets: [ "n4" ] }
+    { id: "e3", sources: [ "n1" ], targets: [ "n4" ] },
+    { id: "e4", sources: [ "n4" ], targets: [ "n1" ] }
   ]
 };
