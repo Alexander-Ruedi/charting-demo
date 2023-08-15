@@ -1,3 +1,5 @@
+//another algo: "mrtree"
+
 export const graphData: any = {
   id: "root",
   layoutOptions: { algorithm: "layered" },

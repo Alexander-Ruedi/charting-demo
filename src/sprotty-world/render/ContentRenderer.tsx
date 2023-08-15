@@ -32,7 +32,6 @@ const JSX = { createElement: snabbdom.svg };
 @injectable()
 export class ElkNodeView extends RectangularNodeView {
   render(node: ElkNode, context: RenderingContext): VNode {
-    console.log("has my node the info?", node);
     const nodeInfos = getNodeInfo(node.id);
     return (
       <g>
