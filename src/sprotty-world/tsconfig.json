@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+      "jsx": "react",
+      "experimentalDecorators": true
+  },
+  "extends": "../../tsconfig.json",
+  "skipLibCheck": true,
+  "plugins": [
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "throwIfNamespace": false, // defaults to true
+        "runtime": "automatic", // defaults to classic
+        "importSource": "snabbdom-jsx" // defaults to react
+      }
+    ]
+  ]
+}
